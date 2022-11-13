@@ -30,5 +30,16 @@ public class Employee {
         return id;
     }
 
+    public void setDepartament() {
+        this.departament = departament;
+    }
 
+    public void setSalary() {
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "[ID: " + id + "] " + fullName + "; " + "отдел № " + departament + "." + " Заработная плата: " + (int)salary;
+    }
 }

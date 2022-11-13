@@ -37,6 +37,45 @@ public class Main {
         return sum;
     }
 
+    public static Employee findSalaryMin() {
+        Employee employee = employees[0];
+        double minSalary = Double.POSITIVE_INFINITY;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null && employees[i].getSalary() < minSalary) {
+                minSalary = employees[i].getSalary();
+                employee = employees[i];
+            }
+        }
+        return employee;
+    }
 
+    public static Employee findSalaryMax() {
+        Employee employee = employees[0];
+        double maxSalary = Double.NEGATIVE_INFINITY;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null && employees[i].getSalary() > maxSalary) {
+                maxSalary = employees[i].getSalary();
+                employee = employees[i];
+            }
+        }
+        return employee;
+    }
+
+    public static double findAverageValueSalary() {
+        int countСurrentEmployees = 0;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                countСurrentEmployees++;
+            }
+        }
+        return calculateSumSalary() / countСurrentEmployees;
+    }
+
+    public static void findFullNameCurrentEmployees() {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                System.out.println("\n " + employees[i].getFullName() + ";");
+            }
+        }
     }
 }
